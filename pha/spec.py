@@ -52,7 +52,7 @@ class ElementDef(object):
         return elem_def
 
 
-def elem(name, *children, **attrs):
+def elem(name: str, *children, **attrs):
     elem_regex = r'^{0}$'.format(name)
     return ElementDef(elem_regex, None, *children, **attrs)
 
@@ -61,12 +61,12 @@ def html(*children, **attrs):
     return ElementDef(r'^html$', None, *children, **attrs)
 
 
-def heading(heading_text, *children, **attrs):
+def heading(heading_text: str, *children, **attrs):
     attrs['content'] = heading_text
     return ElementDef(r'^(h1|h2|h3|h4|h5|h6)$', *children, **attrs)
 
 
-def text(text_content, *children, **attrs):
+def text(text_content: str, *children, **attrs):
     attrs['content'] = text_content
     return ElementDef(r'^.*$', *children, **attrs)
 
