@@ -67,7 +67,7 @@ def heading(heading_text: str, *children, **attrs):
 
 
 def text(text_content: str, *children, **attrs):
-    attrs['content'] = text_content
+    attrs['content'] = text_content.replace("\n", "\\n")
     return ElementDef(r'^.*$', *children, **attrs)
 
 

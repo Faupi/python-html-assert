@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
@@ -52,9 +53,10 @@ class MatcherResult(object):
         return result
 
 
-def linear_match(spec, html_src):
+def linear_match(spec, html_src) -> MatcherResult:
     """ Flattens the html and the spec, and check all spec elements appear in order. """
 
+    html_src = re.sub(r'<br ?/?>', '\\n', html_src)
     root_element = BeautifulSoup(html_src, features="html.parser")
     all_element_definitions = _flatten_element_definitions(spec)
     _prune_unmatched_elements(root_element, all_element_definitions)
