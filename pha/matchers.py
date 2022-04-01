@@ -56,8 +56,9 @@ class MatcherResult(object):
 def linear_match(spec, html_src) -> MatcherResult:
     """ Flattens the html and the spec, and check all spec elements appear in order. """
 
-    html_src = re.sub(r'<br ?/?>', '\\n', html_src)
+    html_src = re.sub(r'\s*<br ?/?>\s*', '\\\\n', html_src)  # Trim whitespace around breaklines and switch them for a \\n
     root_element = BeautifulSoup(html_src, features="html.parser")
+    
     all_element_definitions = _flatten_element_definitions(spec)
     _prune_unmatched_elements(root_element, all_element_definitions)
 
