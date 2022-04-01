@@ -21,12 +21,12 @@ CLASSIFIERS = [
 
 setup(
     name='python-html-assert',
-    version='0.2.1.1',
+    version='0.2.1.2',
     packages=find_packages(),
     install_requires=REQUIREMENTS,
-    author='Robert Cox',
-    author_email='robjohncox@gmail.com',
+    author='Matěj Spurný',
+    author_email='matej.sp583@gmail.com',
     description='partial matching of html using a tree-based specification',
     license='MIT License',
-    url='https://github.com/robjohncox/python-html-assert',
+    url='https://github.com/Faupi/python-html-assert',
     classifiers=CLASSIFIERS)
