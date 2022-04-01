@@ -54,11 +54,11 @@ class ElementDef(object):
 
 def elem(name: str, *children, **attrs):
     elem_regex = r'^{0}$'.format(name)
-    return ElementDef(elem_regex, None, *children, **attrs)
+    return ElementDef(elem_regex, *children, **attrs)
 
 
 def html(*children, **attrs):
-    return ElementDef(r'^html$', None, *children, **attrs)
+    return ElementDef(r'^html$', *children, **attrs)
 
 
 def heading(heading_text: str, *children, **attrs):
