@@ -31,7 +31,7 @@ class MatcherResult(object):
         return pretty_html(self.html_src)
 
     def __repr__(self):
-        return 'MatcherResult[passed={0},elem_defs_not_found={1},failed_on_def={2}'.format(self.passed,
+        return 'MatcherResult[passed={0},elem_defs_not_found={1},failed_on_def={2}]'.format(self.passed,
                                                                                            self.element_defs_not_found,
                                                                                            self.failed_on_def)
     def __str__(self):

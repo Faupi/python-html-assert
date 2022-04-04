@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 
 
 def pretty_html(html_src):
-    parsed_html = BeautifulSoup(html_src)
+    parsed_html = BeautifulSoup(html_src, features="html.parser")
     return parsed_html.prettify()
 
 
@@ -25,7 +25,7 @@ _POST_PARSE_REPLACEMENTS = {
 
 
 def pretty_spec(spec):
-    pretty_spec_html = BeautifulSoup(_build_spec_html(spec)).prettify()
+    pretty_spec_html = BeautifulSoup(_build_spec_html(spec), features="html.parser").prettify()
     for before, after in _POST_PARSE_REPLACEMENTS.items():
         pretty_spec_html = pretty_spec_html.replace(before, after)
     return pretty_spec_html
