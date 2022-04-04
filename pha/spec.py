@@ -7,6 +7,7 @@ class ElementDef(object):
     def __init__(self, name_regex, *children, **attrs):
         self.name_regex = name_regex
         self.name_matcher = re.compile(name_regex)
+        self.r_name = attrs.pop('r_name', None)
         self.parent = None
         self.children = [child for child in children if child]
         self.attrs = attrs
