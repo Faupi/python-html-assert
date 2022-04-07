@@ -48,8 +48,8 @@ class MatcherResult(object):
 
             # These are printable manually, so they could just be left out
             result += 'Specification:\n{0}\n\n'.format(self.pretty_spec())
-            # result += 'Pruned HTML Source:\n{0}\n\n'.format(self.root_element.prettify())
-            # result += 'Full HTML Source:\n{0}\n\n'.format(self.pretty_html_src())
+            result += 'Pruned HTML Source:\n{0}\n\n'.format(self.root_element.prettify())
+            result += 'Full HTML Source:\n{0}\n\n'.format(self.pretty_html_src())
 
         return result
 
